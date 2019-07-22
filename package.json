@@ -1,0 +1,14 @@
+{
+  "name": "confessionbot",
+  "version": "1.0.0",
+  "description": "A simple confession chat bot",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node app.local.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nam Le",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {}
+}
