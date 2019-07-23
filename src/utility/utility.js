@@ -5,6 +5,15 @@ function devLog(message) {
         console.log(message)
 }
 
+function parseParams(query) {
+    var params = {};
+    query.split('&').forEach((keyval) => {
+        keyval = keyval.split('=');
+        params[keyval[0]] = keyval[1]
+    })
+    return params;
+}
+
 module.exports = {
-    devLog
+    devLog, parseParams
 }

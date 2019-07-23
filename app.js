@@ -1,5 +1,6 @@
 'use strict';
-var routes = require('./src/routes')
+let routes = require('./src/routes')
+
 exports.handler = (event, context, callback) => {
     var path = event.path;
     var method = event.httpMethod;
