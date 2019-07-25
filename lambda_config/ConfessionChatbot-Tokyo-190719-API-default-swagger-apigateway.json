@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "version": "2019-07-25T08:08:37Z",
+    "version": "2019-07-25T10:26:01Z",
     "title": "ConfessionChatbot-Tokyo-190719-API"
   },
   "host": "a95zjcc2rg.execute-api.ap-northeast-1.amazonaws.com",
@@ -35,7 +35,7 @@
             }
           },
           "requestTemplates": {
-            "application/json": "{\r\n    \"TableName\":\"chat-status-cb\",\r\n    \"Item\":{\r\n        \"id\":{\"N\":\"$input.path('$.id')\"},\r\n       \"status\":{\"N\":\"$input.path('$.status')\"},\r\n       \"language\":{\"S\":\"$input.path('$.language')\"}\r\n       #if($input.path('$.confessionContent') != \"\"),\r\n       \"confessionContent\":{\"S\":\"$input.path('$.confessionContent')\"}\r\n       #end\r\n    },\r\n    \"ReturnValues\":\"ALL_OLD\"\r\n}"
+            "application/json": "{\r\n    \"TableName\":\"chat-status-cb\",\r\n    \"Item\":{\r\n        \"id\":{\"N\":\"$input.path('$.id')\"},\r\n       \"status\":{\"N\":\"$input.path('$.status')\"},\r\n       \"language\":{\"S\":\"$input.path('$.language')\"},\r\n       \"insertedDate\":{\"S\":\"$input.path('$.insertedDate')\"},\r\n       \"updatedDate\":{\"S\":\"$input.path('$.updatedDate')\"}\r\n       #if($input.path('$.confessionContent') != \"\"),\r\n       \"confessionContent\":{\"S\":\"$input.path('$.confessionContent')\"}\r\n       #end\r\n    },\r\n    \"ReturnValues\":\"ALL_OLD\"\r\n}"
           },
           "passthroughBehavior": "when_no_templates",
           "httpMethod": "POST",
@@ -74,7 +74,7 @@
             "default": {
               "statusCode": "200",
               "responseTemplates": {
-                "application/json": "#set($inputRoot = $input.path('$'))\r\n[\r\n    #foreach($elem in $inputRoot.Items) {\r\n        \"id\": \"$elem.id.N\",\r\n        \"status\": \"$elem.status.N\",\r\n        \"language\": \"$elem.language.S\",\r\n        \"confessionContent\":\"$elem.confessionContent.S\"\r\n    }#if($foreach.hasNext),#end\r\n    #end\r\n]"
+                "application/json": "#set($inputRoot = $input.path('$'))\r\n[\r\n    #foreach($elem in $inputRoot.Items) {\r\n        \"id\": \"$elem.id.N\",\r\n        \"status\": \"$elem.status.N\",\r\n        \"language\": \"$elem.language.S\",\r\n        \"confessionContent\":\"$elem.confessionContent.S\",\r\n        \"insertedDate\":\"$elem.insertedDate.S\",\r\n        \"updatedDate\":\"$elem.updatedDate.S\"\r\n    }#if($foreach.hasNext),#end\r\n    #end\r\n]"
               }
             }
           },
@@ -116,12 +116,12 @@
             "default": {
               "statusCode": "200",
               "responseTemplates": {
-                "application/json": "#set($attr = $input.path('$').Attributes)\r\n{\r\n    \"id\": \"$attr.id.N\",\r\n    \"status\": \"$attr.status.N\",\r\n    \"language\": \"$attr.language.S\",\r\n    \"confessionContent\":\"$attr.confessionContent.S\"\r\n}"
+                "application/json": "#set($attr = $input.path('$').Attributes)\r\n{\r\n    \"id\": \"$attr.id.N\",\r\n    \"status\": \"$attr.status.N\",\r\n    \"language\": \"$attr.language.S\",\r\n    \"confessionContent\":\"$attr.confessionContent.S\",\r\n    \"insertedDate\":\"$attr.insertedDate.S\",\r\n    \"updatedDate\":\"$attr.updatedDate.S\"\r\n}"
               }
             }
           },
           "requestTemplates": {
-            "application/json": "{\n    \"TableName\":\"chat-status-cb\",\n    \"Key\":{\n        \"id\":{\n            \"N\":\"$input.params('id')\"\n        }\n    },\n    \"ReturnValues\":\"ALL_NEW\",\n    \"ExpressionAttributeValues\":{\n        \":v1\":{\n            \"N\":\"$input.path('$.status')\"\n        },\n        \":v2\":{\n            \"S\":\"$input.path('$.language')\"\n        }\n    #set($updateExpression = \"SET #chat_status = :v1, #chat_language = :v2\")\n    #if($input.path('$.confessionContent') != \"\")\n    ,\n        \":v3\":{\n            \"S\":\"$input.path('$.confessionContent')\"\n        }\n        #set($updateExpression = $updateExpression + \",confessionContent = :v3\")\n    #else #set($updateExpression = $updateExpression + \" REMOVE confessionContent\")\n    #end\n    },\n    \"UpdateExpression\":\"$updateExpression\",\n    \"ExpressionAttributeNames\": {\n        \"#chat_status\": \"status\",\n        \"#chat_language\": \"language\"\n  }\n}"
+            "application/json": "{\n    \"TableName\":\"chat-status-cb\",\n    \"Key\":{\n        \"id\":{\n            \"N\":\"$input.params('id')\"\n        }\n    },\n    \"ReturnValues\":\"ALL_NEW\",\n    \"ExpressionAttributeValues\":{\n        \":v1\":{\n            \"N\":\"$input.path('$.status')\"\n        },\n        \":v2\":{\n            \"S\":\"$input.path('$.language')\"\n        },\n        \":v3\":{\n            \"S\":\"$input.path('$.updatedDate')\"\n        }\n    #set($updateExpression = \"SET #chat_status = :v1, #chat_language = :v2, updatedDate = :v3\")\n    #if($input.path('$.confessionContent') != \"\")\n    ,\n        \":v4\":{\n            \"S\":\"$input.path('$.confessionContent')\"\n        }\n        #set($updateExpression = $updateExpression + \", confessionContent = :v4\")\n    #else #set($updateExpression = $updateExpression + \" REMOVE confessionContent\")\n    #end\n    },\n    \"UpdateExpression\":\"$updateExpression\",\n    \"ExpressionAttributeNames\": {\n        \"#chat_status\": \"status\",\n        \"#chat_language\": \"language\"\n  }\n}"
           },
           "passthroughBehavior": "when_no_templates",
           "httpMethod": "POST",
@@ -248,6 +248,39 @@
           ],
           "contentHandling": "CONVERT_TO_TEXT",
           "type": "aws_proxy"
+        }
+      }
+    },
+    "/staging-confession": {
+      "post": {
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "200 response",
+            "schema": {
+              "$ref": "#/definitions/Empty"
+            }
+          }
+        },
+        "x-amazon-apigateway-integration": {
+          "credentials": "arn:aws:iam::376341286524:role/GeneralManager",
+          "uri": "arn:aws:apigateway:ap-northeast-1:dynamodb:action/PutItem",
+          "responses": {
+            "default": {
+              "statusCode": "200"
+            }
+          },
+          "requestTemplates": {
+            "application/json": "{\r\n    \"TableName\":\"staging-confession-cb\",\r\n    \"Item\":{\r\n        \"id\":{\"N\":\"$input.path('$.id')\"},\r\n        \"userId\":{\"N\":\"$input.path('$.userId')\"}\r\n        #if($input.path('$.confessionContent') != \"\"),\r\n        \"confessionContent\":{\"S\":\"$input.path('$.confessionContent')\"}\r\n        #end\r\n    },\r\n    \"ReturnValues\":\"ALL_OLD\"\r\n}"
+          },
+          "passthroughBehavior": "when_no_templates",
+          "httpMethod": "POST",
+          "type": "aws"
         }
       }
     }

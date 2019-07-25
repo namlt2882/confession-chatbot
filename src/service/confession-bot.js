@@ -14,6 +14,8 @@ class ConfessionBot extends EventEmitter {
         this.language = 'vi';
         this.chatStatus = chatStatus['NEW'];
         this.confessionContent = ""
+        this.insertedDate = new Date()
+        this.updatedDate = this.insertedDate
         var data = await new Promise(function (resolve, reject) {
             ChatStatusTable.get(userId, function (data) {
                 resolve(JSON.parse(data));
@@ -25,7 +27,9 @@ class ConfessionBot extends EventEmitter {
                 id: userId,
                 language: this.language,
                 status: this.chatStatus,
-                confessionContent: this.confessionContent
+                confessionContent: this.confessionContent,
+                insertedDate: this.insertedDate,
+                updatedDate: this.updatedDate
             };
             ChatStatusTable.insert(chatStatusObj, function (newObj) {
                 console.log(`--! Add user ${userId} to database: ${JSON.stringify(chatStatusObj)}`)
@@ -36,16 +40,20 @@ class ConfessionBot extends EventEmitter {
             this.language = item.language;
             this.chatStatus = item.status;
             this.confessionContent = Buffer.from(item.confessionContent, 'base64').toString();
+            this.insertedDate = Date.parse(item.insertedDate)
+            this.updatedDate = Date.parse(item.updatedDate)
         }
         this.getMessageData();
         this.emit('ready')
     }
     commitChanges() {
+        this.updatedDate = new Date()
         ChatStatusTable.update({
             id: this.userId,
             language: this.language,
             status: this.chatStatus,
-            confessionContent: Buffer.from(this.confessionContent).toString('base64')
+            confessionContent: Buffer.from(this.confessionContent).toString('base64'),
+            updatedDate: this.updatedDate
         }, (function (data) {
             devLog(data)
         }));
@@ -109,11 +117,11 @@ class ConfessionBot extends EventEmitter {
         else if (this.is('CHANGE-LANGUAGE')) {
             this.isCommand(message, ['Tiếng Việt', 'Vietnamese'], function () {
                 this.setLanguage('vi');
-                this.responseMessage.push('Đã chuyển sang Tiếng Việt.');
+                this.responseMessage.push({ text: 'Đã chuyển sang Tiếng Việt.' });
             });
             this.isCommand(message, ['Tiếng Anh', 'English'], function () {
                 this.setLanguage('en-us');
-                this.responseMessage.push('Switch to English.');
+                this.responseMessage.push({ text: 'Switch to English.' });
             });
             this.talk('COMMAND');
         }
