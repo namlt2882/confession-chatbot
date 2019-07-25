@@ -1,7 +1,7 @@
 var webhook = require('./router/webhook')
 var routes = [
     {
-        path: /^\/webhook/,
+        path: /^\/confession-chatbot\/webhook/,
         router: webhook
     }
 ]

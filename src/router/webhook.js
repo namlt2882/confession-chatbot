@@ -1,5 +1,6 @@
-var { VERIFY_TOKEN, PAGE_ACCESS_TOKEN } = require('../config');
-var { devLog } = require('../utility/utility')
+var { VERIFY_TOKEN, PAGE_ACCESS_TOKEN } = require('../config'),
+    { devLog } = require('../utility/utility'),
+    ConfessionBot = require('../service/confession-bot')
 
 var https = require('https');
 function GET(event, context, callback) {
@@ -67,21 +68,15 @@ function receivedMessage(event) {
     var messageId = message.mid;
     var messageText = message.text;
     var messageAttachments = message.attachments;
-    if (messageText) {
-        // If we receive a text message, check to see if it matches a keyword
-        // and send back the example. Otherwise, just echo the text we received.
-        switch (messageText) {
-            case 'generic':
-                //sendGenericMessage(senderID);
-                break;
-            default:
-                sendTextMessage(senderID, messageText);
-        }
-    } else if (messageAttachments) {
-        sendTextMessage(senderID, "Message with attachment received");
-    }
+    var botInstance = new ConfessionBot()
+    botInstance.on('ready', function () {
+        var responseMessages = botInstance.processMessage(messageText)
+        responseMessages.forEach(m => sendTextMessage(senderID, m.text, m.buttons))
+    })
+    botInstance.init(senderID)
 }
-function sendTextMessage(recipientId, messageText) {
+
+function sendTextMessage(recipientId, messageText, fastResponses = []) {
     var messageData = {
         recipient: {
             id: recipientId
@@ -90,6 +85,13 @@ function sendTextMessage(recipientId, messageText) {
             text: messageText
         }
     };
+    if (fastResponses.length > 0) {
+        messageData.message.quick_replies = fastResponses.map(response => ({
+            "content_type": "text",
+            "title": response,
+            "payload": "<POSTBACK_PAYLOAD>"
+        }))
+    }
     callSendAPI(messageData);
 }
 function callSendAPI(messageData) {

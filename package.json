@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "node app.local.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "chatbot-console": "export CHATBOT_CONSOLE=true || SET \"CHATBOT_CONSOLE=true\" && node chatbot-console.js",
+    "debug-chatbot": "export CHATBOT_CONSOLE=true || SET \"CHATBOT_CONSOLE=true\" && node --inspect-brk=0.0.0.0:9229 chatbot-console.js"
   },
   "author": "Nam Le",
   "license": "ISC",

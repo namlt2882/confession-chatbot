@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Launch simulated Lambda server",
             "program": "${workspaceFolder}\\app.local.js",
             "envFile": "${workspaceFolder}/.env"
         }
