@@ -69,9 +69,11 @@ function receivedMessage(event) {
     var messageText = message.text;
     var messageAttachments = message.attachments;
     var botInstance = new ConfessionBot()
-    botInstance.on('ready', function () {
+    botInstance.on('ready', async function () {
         var responseMessages = botInstance.processMessage(messageText)
-        responseMessages.forEach(m => sendTextMessage(senderID, m.text, m.buttons))
+        for (m of responseMessages) {
+            await sendTextMessage(senderID, m.text, m.buttons)
+        }
     })
     botInstance.init(senderID)
 }
@@ -92,7 +94,7 @@ function sendTextMessage(recipientId, messageText, fastResponses = []) {
             "payload": "<POSTBACK_PAYLOAD>"
         }))
     }
-    callSendAPI(messageData);
+    return callSendAPI(messageData);
 }
 function callSendAPI(messageData) {
     var body = JSON.stringify(messageData);
@@ -103,21 +105,25 @@ function callSendAPI(messageData) {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' }
     };
-    var callback = function (response) {
-        var str = ''
-        response.on('data', function (chunk) {
-            str += chunk;
+    return new Promise(function (resolve, reject) {
+        var callback = function (response) {
+            var data = ''
+            response.on('data', function (chunk) {
+                data += chunk;
+            });
+            response.on('end', function () {
+                resolve(data)
+                devLog('Message Sent!!!!!')
+            });
+        }
+        var req = https.request(options, callback);
+        req.on('error', function (e) {
+            reject(e)
+            console.log('problem with request: ' + e);
         });
-        response.on('end', function () {
-            devLog('Message Sent!!!!!')
-        });
-    }
-    var req = https.request(options, callback);
-    req.on('error', function (e) {
-        console.log('problem with request: ' + e);
-    });
+        req.write(body);
+        req.end();
+    })
 
-    req.write(body);
-    req.end();
 }
 module.exports = { GET, POST }
