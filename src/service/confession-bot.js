@@ -31,9 +31,15 @@ class ConfessionBot extends EventEmitter {
                 insertedDate: this.insertedDate,
                 updatedDate: this.updatedDate
             };
-            ChatStatusTable.insert(chatStatusObj, function (newObj) {
-                console.log(`--! Add user ${userId} to database: ${JSON.stringify(chatStatusObj)}`)
-            }, function (err) { throw err; });
+            await new Promise(function(resolve,reject){
+                ChatStatusTable.insert(chatStatusObj, function (newObj) {
+                    console.log(`--! Add user ${userId} to database: ${JSON.stringify(chatStatusObj)}`)
+                    resolve(newObj)
+                }, function (err) {
+                    reject(err)
+                    throw err; 
+                })
+            }) 
         }
         else {
             let item = data[0];
