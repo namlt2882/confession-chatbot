@@ -10,7 +10,7 @@ Chatbot is written in **NodeJS** and deploy to **AWS** as **Lambda** function. T
 the benefits of AWS Lambda.
 
 ### Database
-To track status of conversation, Chatbot will store data on **AWS DynamoDB**. DynamoDB is an easy to use NoSQL database and totaly 
+To track status of conversation, Chatbot will store data on **AWS DynamoDB**. DynamoDB is an easy-to-use NoSQL database and totally 
 fit with stateless applications like Lambda function. Lambda function can interact with DynamoDB tables through **AWS API Gateway**.
 
 ## Usage
