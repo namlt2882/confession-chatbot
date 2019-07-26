@@ -19,8 +19,6 @@ function retrieveFile(event, context, callback) {
         fileLocation = 'index.html'
     }
     fileLocation = path.resolve(__dirname, `./../../public/${fileLocation}`)
-    console.log(__dirname)
-    console.log(fileLocation)
     fs.readFile(fileLocation, function (err, data) {
         var response;
         if (err) {

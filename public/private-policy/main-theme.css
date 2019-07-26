@@ -1,0 +1,3722 @@
+/**
+ * Main Stylesheet for the front-end of the site.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
+/**
+ * 1. Change the default font family in all browsers (opinionated).
+ * 2. Correct the line height in all browsers.
+ * 3. Prevent adjustments of font size after orientation changes in IE and iOS.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  line-height: 1.15;
+  /* 2 */
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  -webkit-text-size-adjust: 100%;
+  /* 3 */ }
+
+/**
+ * Remove the margin in all browsers (opinionated).
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Add the correct display in IE 9-.
+ * 1. Add the correct display in Edge, IE, and Firefox.
+ * 2. Add the correct display in IE.
+ */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+menu,
+nav,
+section,
+summary {
+  /* 1 */
+  display: block; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+canvas,
+progress,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline; }
+
+/**
+ * Add the correct display in IE 10-.
+ * 1. Add the correct display in IE.
+ */
+template,
+[hidden] {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * 1. Remove the gray background on active links in IE 10.
+ * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+ */
+a {
+  background-color: transparent;
+  /* 1 */
+  -webkit-text-decoration-skip: objects;
+  /* 2 */ }
+
+/**
+ * Remove the outline on focused links when they are also active or hovered
+ * in all browsers (opinionated).
+ */
+a:active,
+a:hover {
+  outline-width: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * 1. Remove the bottom border in Firefox 39-.
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  -webkit-text-decoration: underline dotted;
+          text-decoration: underline dotted;
+  /* 2 */ }
+
+/**
+ * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+ */
+b,
+strong {
+  font-weight: inherit; }
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder; }
+
+/**
+ * Add the correct font style in Android 4.3-.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Add the correct background and color in IE 9-.
+ */
+mark {
+  background-color: #ff0;
+  color: #000; }
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sub {
+  bottom: -0.25em; }
+
+sup {
+  top: -0.5em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */ }
+
+/**
+ * Add the correct margin in IE 8.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */ }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change font properties to `inherit` in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font: inherit;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Restore the font weight unset by the previous rule.
+ */
+optgroup {
+  font-weight: bold; }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+ *    controls in Android 4.
+ * 2. Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+html [type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */ }
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type="button"]::-moz-focus-inner,
+[type="reset"]::-moz-focus-inner,
+[type="submit"]::-moz-focus-inner {
+  border-style: none;
+  padding: 0; }
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+button:-moz-focusring,
+[type="button"]:-moz-focusring,
+[type="reset"]:-moz-focusring,
+[type="submit"]:-moz-focusring {
+  outline: 1px dotted ButtonText; }
+
+/**
+ * Change the border, margin, and padding in all browsers (opinionated).
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type="number"]::-webkit-inner-spin-button,
+[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */ }
+
+/**
+ * Remove the inner padding and cancel buttons in Chrome and Safari on OS X.
+ */
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Correct the text style of placeholders in Chrome, Edge, and Safari.
+ */
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 0.54; }
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */ }
+
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/* stylelint-disable selector-max-type */
+/* stylelint-enable */
+/* stylelint-enable */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/* stylelint-disable selector-max-type */
+/* stylelint-enable */
+/* stylelint-enable */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+@-webkit-keyframes bpk-keyframe-spin {
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn); } }
+@keyframes bpk-keyframe-spin {
+  100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn); } }
+
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+/*
+ * 
+ * Backpack - Skyscanner's Design System
+ * 
+ * Copyright 2016-2019 Skyscanner Ltd
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * 
+ */
+/* stylelint-disable selector-max-type */
+/* stylelint-enable */
+/* stylelint-enable */
+/*
+ * Backpack - Skyscanner's Design System
+ *
+ * Copyright 2016-2019 Skyscanner Ltd
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *   http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+html {
+  font-size: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+* {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit; }
+  *::before, *::after {
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit; }
+
+/* stylelint-disable selector-class-pattern */
+body {
+  color: #524c61;
+  font-family: -apple-system, BlinkMacSystemFont, "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", "Arial", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem; }
+  body.scaffold-font-size {
+    font-size: 13px;
+    /* stylelint-disable-line unit-blacklist, scale-unlimited/declaration-strict-value */ }
+  body.enable-font-smoothing {
+    -webkit-font-smoothing: antialiased; }
+
+.hidden,
+.hide {
+  display: none !important;
+  /* stylelint-disable-line declaration-no-important */ }
+
+.visuallyhidden,
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  /* stylelint-disable-line unit-blacklist */
+  height: 1px;
+  /* stylelint-disable-line unit-blacklist */
+  margin: -1px;
+  /* stylelint-disable-line unit-blacklist */
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0); }
+
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus,
+.visually-hidden.focusable:active,
+.visually-hidden.focusable:focus {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto; }
+
+.invisible {
+  visibility: hidden; }
+
+.clearfix::before, .clearfix::after {
+  content: '';
+  display: table; }
+
+.clearfix::after {
+  clear: both; }
+
+/* stylelint-enable */
+/**
+ * Global Styles.
+ */
+/**
+ * Generic block-level default and normalization styles.
+ */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 3px; }
+
+a {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #00b2d6;
+  color: var(--bpk-link-color, #00b2d6); }
+  .bpk-no-touch-support a:hover:not(:active):not(:disabled) {
+    text-decoration: underline;
+    color: #524c61;
+    color: var(--bpk-link-hover-color, #524c61); }
+  .bpk-no-touch-support a:hover:not(:active):not(:disabled) {
+    text-decoration: underline;
+    color: #524c61;
+    color: var(--bpk-link-hover-color, #524c61); }
+  a:visited {
+    color: #008ca8;
+    color: var(--bpk-link-visited-color, #008ca8); }
+  a:active {
+    text-decoration: underline;
+    color: #252033;
+    color: var(--bpk-link-active-color, #252033); }
+
+blockquote {
+  margin: 0 0 0.75rem 0;
+  padding: 0.375rem 0.375rem 0.375rem 1.125rem;
+  color: #817b8f;
+  color: var(--bpk-color-gray-500, #817b8f);
+  background-color: #f3f2f5;
+  background-color: var(--bpk-color-gray-50, #f3f2f5);
+  -webkit-box-shadow: 2px 0 0 0 #00b2d6 inset;
+          box-shadow: 2px 0 0 0 #00b2d6 inset;
+  -webkit-box-shadow: 2px 0 0 0 var(--bpk-blockquote-bar-color, #00b2d6) inset;
+          box-shadow: 2px 0 0 0 var(--bpk-blockquote-bar-color, #00b2d6) inset;
+  border-left: 0px none; }
+  html[dir=rtl] blockquote {
+    padding: 0.375rem 1.125rem 0.375rem 0.375rem;
+    border-left: 0;
+    -webkit-box-shadow: -2px 0 0 0 #00b2d6 inset;
+            box-shadow: -2px 0 0 0 #00b2d6 inset;
+    -webkit-box-shadow: -2px 0 0 0 var(--bpk-blockquote-bar-color, #00b2d6) inset;
+            box-shadow: -2px 0 0 0 var(--bpk-blockquote-bar-color, #00b2d6) inset; }
+  blockquote > *:last-child {
+    margin-bottom: 0; }
+  blockquote p {
+    margin-bottom: 0; }
+  blockquote cite {
+    font-style: italic; }
+
+label {
+  display: block;
+  color: #524c61;
+  font-size: 0.75rem;
+  font-weight: 700;
+  line-height: 1.125rem; }
+
+table,
+.wp-block-table {
+  width: 100%;
+  margin-bottom: 0.75rem;
+  border-collapse: collapse;
+  table-layout: fixed;
+  -webkit-box-shadow: 0 0 0 1px #e6e4eb ;
+          box-shadow: 0 0 0 1px #e6e4eb ;
+  -webkit-box-shadow: 0 0 0 1px var(--bpk-color-gray-100, #e6e4eb) ;
+          box-shadow: 0 0 0 1px var(--bpk-color-gray-100, #e6e4eb) ;
+  table-layout: auto;
+  display: table;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem; }
+  table th,
+  .wp-block-table th {
+    padding: 0.75rem;
+    font-weight: normal;
+    text-align: left;
+    background-color: #f3f2f5;
+    background-color: var(--bpk-color-gray-50, #f3f2f5); }
+    html[dir=rtl] table th, html[dir=rtl]
+    .wp-block-table th {
+      text-align: right; }
+  table td,
+  .wp-block-table td {
+    padding: 0.75rem; }
+
+ul {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  margin-left: 0px; }
+  ul ul {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 0; }
+  ul li {
+    margin-top: 0;
+    margin-bottom: 0; }
+
+figure,
+.wp-block-image {
+  margin: 1.5rem auto;
+  /*
+	 * The Gutenberg styles override min-width which causes image
+	 * to potentially scroll off-screen on mobile. This fixes that
+	 * issue by overriding the min and max-width behavior.
+	 */ }
+  @media (max-width: 32.25rem) {
+    figure.is-resized,
+    .wp-block-image.is-resized {
+      width: auto; }
+      figure.is-resized img,
+      .wp-block-image.is-resized img {
+        max-width: 100%;
+        display: block;
+        margin: auto; } }
+
+.wp-block-button__link {
+  display: inline-block;
+  margin: 0;
+  padding: 0.375rem 1.125rem;
+  border: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00d775), to(#00bd68));
+  background-image: linear-gradient(-180deg, #00d775 0%, #00bd68 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--bpk-button-primary-gradient-start-color, #00d775)), to(var(--bpk-button-primary-gradient-end-color, #00bd68)));
+  background-image: linear-gradient(-180deg, var(--bpk-button-primary-gradient-start-color, #00d775) 0%, var(--bpk-button-primary-gradient-end-color, #00bd68) 100%);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: white;
+  color: var(--bpk-button-primary-text-color, white);
+  background-color: #00d775;
+  background-color: var(--bpk-button-primary-background-color, #00d775);
+  border-radius: 1.125rem;
+  border-radius: var(--bpk-button-border-radius, 1.125rem); }
+  .bpk-no-touch-support .wp-block-button__link:hover:not(:active):not(:disabled) {
+    background-image: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: white;
+    color: var(--bpk-button-primary-hover-text-color, white);
+    background-color: #00bd68;
+    background-color: var(--bpk-button-primary-hover-background-color, #00bd68); }
+  .bpk-no-touch-support .wp-block-button__link:hover:not(:active):not(:disabled) {
+    background-image: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: white;
+    color: var(--bpk-button-primary-hover-text-color, white);
+    background-color: #00bd68;
+    background-color: var(--bpk-button-primary-hover-background-color, #00bd68); }
+  .wp-block-button__link:active {
+    background-image: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: white;
+    color: var(--bpk-button-primary-active-text-color, white);
+    background-color: #00a85d;
+    background-color: var(--bpk-button-primary-active-background-color, #00a85d); }
+  .wp-block-button__link:disabled {
+    background-color: #e6e4eb;
+    background-image: none;
+    color: #b2aebd;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    cursor: not-allowed; }
+
+.components-icon-button {
+  overflow: hidden; }
+
+@media (min-width: 32.25rem) {
+  .alignleft {
+    float: left;
+    margin: 1.5rem 1.5rem 1.5rem 0; }
+  .alignright {
+    float: right;
+    margin: 1.5rem 0 1.5rem 1.5rem; }
+  p + .alignleft, p +
+  .alignright {
+    margin-top: 0; } }
+
+@media (min-width: 50.25rem) {
+  .page .alignwide,
+  .page .alignfull {
+    width: auto;
+    max-width: none; }
+    .page .alignwide img,
+    .page .alignwide iframe,
+    .page .alignfull img,
+    .page .alignfull iframe {
+      width: 100%; }
+  .page .alignwide {
+    margin: 1.5rem calc( ( 50% - 50vw ) / 2); }
+  .page .alignfull {
+    width: 100vw;
+    margin: 1.5rem calc( 50% - 50vw); } }
+
+/**
+ * Default styles for WordPress-specific classes and output.
+ */
+.wp-caption {
+  max-width: 100%; }
+
+.wp-block-pullquote {
+  border-bottom: 0px none;
+  border-top: 0px none; }
+
+.wp-block-embed {
+  margin: 1.5rem auto;
+  max-width: 100%; }
+  .wp-block-embed.wp-block-embed-instagram iframe {
+    padding-right: 1px !important; }
+    @media (max-width: 32.25rem) {
+      .wp-block-embed.wp-block-embed-instagram iframe {
+        min-width: 100% !important; } }
+  .wp-block-embed iframe,
+  .wp-block-embed twitterwidget {
+    max-width: 100%;
+    margin: auto; }
+
+.wp-block-media-text {
+  margin: 1.875rem 0px; }
+  @media (max-width: 32.25rem) {
+    .wp-block-media-text {
+      grid-template-areas: "media-text-media" "media-text-content";
+      grid-template-columns: 100% auto !important;
+      margin: 0.75rem 0px; }
+      .wp-block-media-text .editor-inner-blocks,
+      .wp-block-media-text .wp-block-media-text__content {
+        padding: 0; } }
+
+.has-sm-font-size {
+  font-size: 0.75rem;
+  line-height: 1.125rem; }
+
+.has-base-font-size {
+  font-size: 1rem;
+  line-height: 1.5rem; }
+
+.has-lg-font-size {
+  font-size: 1.5rem;
+  line-height: 1.875rem; }
+
+.has-xl-font-size {
+  font-size: 1.75rem;
+  line-height: 2.625rem; }
+
+.has-xxl-font-size {
+  font-size: 2.625rem;
+  line-height: 3.375rem; }
+
+.has-blue-500-background-color {
+  background-color: #00b2d6;
+  background-color: var(--bpk-primary-color, #00b2d6); }
+
+.has-blue-500-color {
+  color: #00b2d6;
+  color: var(--bpk-primary-color, #00b2d6); }
+
+.has-blue-700-background-color {
+  background-color: #008ca8; }
+
+.has-blue-700-color {
+  color: #008ca8; }
+
+.has-white-background-color {
+  background-color: white; }
+
+.has-white-color {
+  color: white; }
+
+.has-green-500-background-color {
+  background-color: #00d775; }
+
+.has-green-500-color {
+  color: #00d775; }
+
+.has-yellow-500-background-color {
+  background-color: #ffbb00; }
+
+.has-yellow-500-color {
+  color: #ffbb00; }
+
+.has-red-500-background-color {
+  background-color: #ff5452; }
+
+.has-red-500-color {
+  color: #ff5452; }
+
+.has-gray-50-background-color {
+  background-color: #f3f2f5;
+  background-color: var(--bpk-color-gray-50, #f3f2f5); }
+
+.has-gray-50-color {
+  color: #f3f2f5;
+  color: var(--bpk-color-gray-50, #f3f2f5); }
+
+.has-gray-100-background-color {
+  background-color: #e6e4eb;
+  background-color: var(--bpk-color-gray-100, #e6e4eb); }
+
+.has-gray-100-color {
+  color: #e6e4eb;
+  color: var(--bpk-color-gray-100, #e6e4eb); }
+
+.has-gray-300-background-color {
+  background-color: #b2aebd;
+  background-color: var(--bpk-color-gray-300, #b2aebd); }
+
+.has-gray-300-color {
+  color: #b2aebd;
+  color: var(--bpk-color-gray-300, #b2aebd); }
+
+.has-gray-500-background-color {
+  background-color: #817b8f;
+  background-color: var(--bpk-color-gray-500, #817b8f); }
+
+.has-gray-500-color {
+  color: #817b8f;
+  color: var(--bpk-color-gray-500, #817b8f); }
+
+.has-gray-700-background-color {
+  background-color: #524c61;
+  background-color: var(--bpk-color-gray-700, #524c61); }
+
+.has-gray-700-color {
+  color: #524c61;
+  color: var(--bpk-color-gray-700, #524c61); }
+
+.has-gray-900-background-color {
+  background-color: #252033;
+  background-color: var(--bpk-color-gray-900, #252033); }
+
+.has-gray-900-color {
+  color: #252033;
+  color: var(--bpk-color-gray-900, #252033); }
+
+/**
+ * Site-wide shared text and typography styles.
+ */
+h1 {
+  font-size: 2.25rem;
+  line-height: 2.625rem;
+  font-weight: bold;
+  color: #252033;
+  color: var(--bpk-color-gray-900, #252033); }
+
+h2 {
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  font-weight: normal; }
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  font-weight: normal; }
+
+h4 {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: bold;
+  color: #252033;
+  color: var(--bpk-color-gray-900, #252033); }
+
+h5 {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: normal;
+  color: #524c61;
+  color: var(--bpk-color-gray-700, #524c61); }
+
+h6 {
+  font-size: 0.75rem;
+  line-height: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #817b8f;
+  color: var(--bpk-color-gray-500, #817b8f); }
+
+.centered-text {
+  text-align: center; }
+
+/**
+ * Site-wide shared layout styles.
+ */
+.wrap {
+  display: block;
+  max-width: 1048px;
+  margin: auto;
+  padding: 0.75rem; }
+  .wrap::before, .wrap::after {
+    content: '';
+    display: table; }
+  .wrap::after {
+    clear: both; }
+  .wrap.full-width {
+    padding: 0; }
+  @media (min-width: 50.25rem) {
+    .wrap {
+      padding: 1.5rem; } }
+
+/**
+ * Pages.
+ */
+/**
+ * Styles for the fallback archive pages (search, author, date, tag, etc.)
+ */
+.archive {
+  -ms-flex-direction: column;
+      flex-direction: column; }
+  .archive .content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+        flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    @media (min-width: 50.25rem) {
+      .archive .content {
+        display: block; } }
+
+/**
+ * Single post view styles.
+ */
+.single-post header.wrap {
+  margin-bottom: 0; }
+
+.single-post__back-link {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #00b2d6;
+  color: var(--bpk-link-color, #00b2d6);
+  display: block;
+  margin-bottom: 1.875rem;
+  position: relative; }
+  .bpk-no-touch-support .single-post__back-link:hover:not(:active):not(:disabled) {
+    text-decoration: underline;
+    color: #524c61;
+    color: var(--bpk-link-hover-color, #524c61); }
+  .bpk-no-touch-support .single-post__back-link:hover:not(:active):not(:disabled) {
+    text-decoration: underline;
+    color: #524c61;
+    color: var(--bpk-link-hover-color, #524c61); }
+  .single-post__back-link:visited {
+    color: #008ca8;
+    color: var(--bpk-link-visited-color, #008ca8); }
+  .single-post__back-link:active {
+    text-decoration: underline;
+    color: #252033;
+    color: var(--bpk-link-active-color, #252033); }
+  @media (min-width: 50.25rem) {
+    .single-post__back-link {
+      display: none; } }
+  .single-post__back-link svg {
+    fill: #00b2d6;
+    fill: var(--bpk-primary-color, #00b2d6);
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-bottom: -6px; }
+
+.single-post__breadcrumbs {
+  margin: -1.5rem 0 1.875rem 0;
+  display: none; }
+  .single-post__breadcrumbs .breadcrumb_last {
+    color: #524c61;
+    color: var(--bpk-color-gray-700, #524c61); }
+  .single-post__breadcrumbs a:before,
+  .single-post__breadcrumbs .breadcrumb_last:before {
+    content: '';
+    display: inline-block;
+    width: 1.125rem;
+    height: 1.125rem;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjYjJhZWJkICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTkuOSAxOS43TDE3IDEyIDkuOSA0LjRjLS43LS43LTEuNy0uMi0xLjcuN3YxNGMwIC44IDEgMS4zIDEuNy42eiIvPjwvc3ZnPg==") no-repeat;
+    background-size: cover;
+    margin-right: 0.75rem;
+    margin-left: 0.75rem;
+    vertical-align: middle; }
+  .single-post__breadcrumbs > span > span > a:before {
+    display: none; }
+  @media (min-width: 50.25rem) {
+    .single-post__breadcrumbs {
+      display: block; } }
+
+.single-post__header {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: start;
+      justify-content: flex-start; }
+  @media (min-width: 50.25rem) {
+    .single-post__header {
+      text-align: center;
+      margin-bottom: 1.875rem; } }
+
+.single-post__title {
+  -ms-flex-order: 1;
+      order: 1;
+  font-size: 2.25rem;
+  line-height: 2.625rem;
+  margin: 0 0 1.5rem;
+  word-wrap: break-word; }
+
+.single-post__meta {
+  -ms-flex-order: 2;
+      order: 2;
+  margin-bottom: 1.5rem; }
+  .single-post__meta .screen-reader-text {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    position: absolute; }
+  .single-post__meta span,
+  .single-post__meta a {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    color: #817b8f;
+    color: var(--bpk-color-gray-500, #817b8f);
+    text-decoration: none; }
+
+.single-post__featured-image {
+  border-radius: 0.1875rem;
+  overflow: hidden;
+  -ms-flex-order: 4;
+      order: 4;
+  width: 100%;
+  height: 10.125rem;
+  margin-top: 1.875rem; }
+  @media (min-width: 32.25rem) {
+    .single-post__featured-image {
+      height: 15rem; } }
+  @media (min-width: 50.25rem) {
+    .single-post__featured-image {
+      height: 19.5rem; } }
+  .single-post__featured-image img {
+    max-width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover; }
+
+.single-post__content {
+  max-width: 62rem;
+  margin: auto;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap; }
+  @media (max-width: 1090px) {
+    .single-post__content {
+      max-width: 41.75rem;
+      -ms-flex-pack: center;
+          justify-content: center; } }
+  .single-post__content p {
+    margin-bottom: 1.875rem; }
+
+.no-sidebar .single-post__content {
+  width: 100%; }
+
+.no-sidebar .single-post__main_content {
+  -ms-flex: 0 0 100%;
+      flex: 0 0 100%;
+  max-width: 100%; }
+
+.single-post__main_content {
+  max-width: 100%;
+  width: 100%; }
+  @media (min-width: 1090px) {
+    .single-post__main_content {
+      -ms-flex: 0 1 66%;
+          flex: 0 1 66%;
+      max-width: 66%;
+      word-break: break-word; } }
+  .single-post__main_content * {
+    max-width: 100%; }
+
+.single-post__summary {
+  font-size: 1.5rem;
+  line-height: 1.875rem; }
+
+.sidebar {
+  -ms-flex: 0 1 30%;
+      flex: 0 1 30%;
+  margin-left: 1.5rem;
+  padding-top: 1.5rem; }
+  @media (max-width: 1090px) {
+    .sidebar {
+      display: none; } }
+  .sidebar .page-widget {
+    margin-bottom: 1.5rem; }
+
+.social-share {
+  -ms-flex-order: 3;
+      order: 3;
+  margin: 0 auto; }
+
+/**
+ * Single post view styles.
+ */
+@media (max-width: 71.25rem) {
+  .page-template-full-width .entry-content {
+    padding: 0 1.5rem; }
+    .page-template-full-width .entry-content .alignfull {
+      width: 100vw;
+      margin: 1.5rem calc( 50% - 50vw); } }
+
+/**
+ * Components.
+ */
+/**
+ * Backpack Accordion styles.
+ */
+.bpk-accordion__item {
+  margin-bottom: 1.5rem; }
+  .editor-block-list__layout .bpk-accordion__item {
+    margin-bottom: 0; }
+  .bpk-accordion__item + .bpk-accordion__item {
+    margin-top: -1.875rem; }
+
+.bpk-accordion__toggle-button {
+  width: 100%;
+  padding: 0.375rem 0;
+  border: 0;
+  background-color: transparent;
+  text-align: left;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  -webkit-box-shadow: 0 -1px 0 0 #e6e4eb inset;
+          box-shadow: 0 -1px 0 0 #e6e4eb inset;
+  color: #00b2d6;
+  color: var(--bpk-accordion-color, #00b2d6); }
+  html[dir=rtl] .bpk-accordion__toggle-button {
+    text-align: right; }
+  .bpk-no-touch-support .bpk-accordion__toggle-button:hover:not(:active):not(:disabled) {
+    color: #524c61;
+    color: var(--bpk-accordion-hover-color, #524c61); }
+  .bpk-no-touch-support .bpk-accordion__toggle-button:hover:not(:active):not(:disabled) {
+    color: #524c61;
+    color: var(--bpk-accordion-hover-color, #524c61); }
+  .bpk-accordion__toggle-button:active {
+    color: #252033;
+    color: var(--bpk-accordion-active-color, #252033); }
+
+.bpk-accordion__flex-container {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: 100%;
+  -ms-flex-direction: row;
+      flex-direction: row; }
+
+.bpk-accordion__title-text,
+.bpk-accordion__flex-container .editor-rich-text {
+  display: inline-block;
+  -ms-flex-positive: 1;
+      flex-grow: 1; }
+
+.bpk-accordion__icon-wrapper {
+  display: inline-block; }
+
+.bpk-accordion__item-expand-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+  content: '';
+  display: inline-block;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMDBiMmQ2ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTEyIDE3LjVsLTcuMi02LjRjLS42LS41LS43LTEuNS0uMS0yLjEuNS0uNiAxLjUtLjcgMi4xLS4xbDUuMiA0LjYgNS4yLTQuNmMuNi0uNiAxLjYtLjUgMi4xLjFzLjUgMS42LS4xIDIuMUwxMiAxNy41eiIvPjwvc3ZnPg==") no-repeat;
+  background-size: cover; }
+  .bpk-no-touch-support .bpk-accordion__item-expand-icon:hover:not(:active):not(:disabled) {
+    content: '';
+    display: inline-block;
+    width: 1.125rem;
+    height: 1.125rem;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMDA4Y2E4ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTEyIDE3LjVsLTcuMi02LjRjLS42LS41LS43LTEuNS0uMS0yLjEuNS0uNiAxLjUtLjcgMi4xLS4xbDUuMiA0LjYgNS4yLTQuNmMuNi0uNiAxLjYtLjUgMi4xLjFzLjUgMS42LS4xIDIuMUwxMiAxNy41eiIvPjwvc3ZnPg==") no-repeat;
+    background-size: cover; }
+  .bpk-no-touch-support .bpk-accordion__item-expand-icon:hover:not(:active):not(:disabled) {
+    content: '';
+    display: inline-block;
+    width: 1.125rem;
+    height: 1.125rem;
+    background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjMDA4Y2E4ICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTEyIDE3LjVsLTcuMi02LjRjLS42LS41LS43LTEuNS0uMS0yLjEuNS0uNiAxLjUtLjcgMi4xLS4xbDUuMiA0LjYgNS4yLTQuNmMuNi0uNiAxLjYtLjUgMi4xLjFzLjUgMS42LS4xIDIuMUwxMiAxNy41eiIvPjwvc3ZnPg==") no-repeat;
+    background-size: cover; }
+
+.bpk-accordion__content-container {
+  margin: 0;
+  padding: 0.375rem 0;
+  -webkit-transition: 300ms height ease-in-out, 200ms opacity linear;
+  transition: 300ms height ease-in-out, 200ms opacity linear;
+  opacity: 0;
+  height: 0;
+  pointer-events: none;
+  overflow: hidden; }
+  .editor-block-list__layout .bpk-accordion__content-container {
+    height: auto; }
+
+.bpk-accordion__content-edit-container {
+  margin: 0;
+  padding: 0.375rem 0;
+  height: auto; }
+  .bpk-accordion__content-edit-container p:first-child {
+    margin-top: 1em; }
+
+.bpk-accordion--open {
+  margin-bottom: 2.25rem; }
+  .bpk-accordion--open .bpk-accordion__item-expand-icon {
+    -webkit-transform: scaleY(-1);
+            transform: scaleY(-1); }
+  .bpk-accordion--open .bpk-accordion__content-container {
+    opacity: 1;
+    -webkit-transition: 300ms height ease-in-out, 400ms opacity linear;
+    transition: 300ms height ease-in-out, 400ms opacity linear;
+    pointer-events: auto; }
+
+/**
+ * Styles for the shared site header.
+ */
+.site-header {
+  margin: 1.5rem auto;
+  position: relative; }
+  @media (min-width: 50.25rem) {
+    .site-header {
+      padding: 1.5rem;
+      margin-bottom: 0.375rem; } }
+
+.site-header__title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e6e4eb;
+  border-bottom-color: var(--bpk-color-gray-100, #e6e4eb);
+  padding-bottom: 0.75rem;
+  padding-right: 30px;
+  letter-spacing: inherit;
+  margin: 0;
+  min-height: 2.3125rem;
+  font-weight: bold;
+  color: #252033;
+  color: var(--bpk-color-gray-900, #252033); }
+  @media (min-width: 50.25rem) {
+    .site-header__title {
+      padding-right: 32%; } }
+  .site-header__title a {
+    text-decoration: none; }
+
+.page-title {
+  margin: 0 0 1.875rem;
+  text-align: center; }
+
+/**
+ * Search form styles.
+ */
+.site-header__search-form-wrapper {
+  width: 30%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  margin-right: 1.5rem;
+  text-align: left; }
+  @media (max-width: 50.25rem) {
+    .site-header__search-form-wrapper {
+      margin-right: 0.75rem;
+      width: 100%;
+      padding: -0.75rem 0 0.75rem 1.5rem; } }
+  @media (max-width: 50.25rem) {
+    .site-header__search-form-wrapper .search-form {
+      position: absolute;
+      width: 0;
+      height: 0;
+      overflow: hidden;
+      z-index: 10;
+      -webkit-transition: opacity .2s ease;
+      transition: opacity .2s ease;
+      opacity: 0; } }
+  .site-header__search-form-wrapper.open .search-form {
+    width: 100%;
+    left: 1.5rem;
+    padding-right: 3.75rem;
+    height: 3.375rem;
+    z-index: 20;
+    top: -0.625rem;
+    background: white;
+    opacity: 1;
+    overflow: visible; }
+  .site-header__search-form-wrapper.open .search-form__button {
+    right: 4.125rem; }
+  .site-header__search-form-wrapper.open .search-form__toggle .cross-icon {
+    display: inline-block;
+    fill: #524c61;
+    fill: var(--bpk-color-gray-700, #524c61); }
+  .site-header__search-form-wrapper.open .search-form__toggle .search-icon {
+    display: none; }
+
+.search-form {
+  position: relative;
+  max-width: 31.25rem;
+  background: white; }
+  .content .search-form {
+    margin: auto; }
+
+.search-form__input {
+  display: inline-block;
+  width: 100%;
+  height: 2.25rem;
+  padding: 0.375rem 0.75rem;
+  border: solid 0.0625rem #E6E4EB;
+  border-radius: 0.1875rem;
+  background: #ffffff;
+  color: #524c61;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding-right: 1.875rem; }
+  .search-form__input::-webkit-input-placeholder {
+    color: #817b8f;
+    font-style: italic; }
+  .search-form__input:-ms-input-placeholder {
+    color: #817b8f;
+    font-style: italic; }
+  .search-form__input::-ms-input-placeholder {
+    color: #817b8f;
+    font-style: italic; }
+  .search-form__input::placeholder {
+    color: #817b8f;
+    font-style: italic; }
+  .search-form__input:disabled {
+    border-color: #f3f2f5;
+    background: #ffffff;
+    color: #b2aebd;
+    cursor: not-allowed; }
+  .search-form__input[type=number] {
+    -moz-appearance: textfield; }
+    .search-form__input[type=number]::-webkit-inner-spin-button, .search-form__input[type=number]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+              appearance: none; }
+  html[dir=rtl] .search-form__input[type=number], html[dir=rtl] .search-form__input[type=tel], html[dir=rtl] .search-form__input[type=email] {
+    text-align: right;
+    direction: ltr; }
+  .search-form__input::-ms-clear {
+    display: none; }
+  .content .search-form__input {
+    height: 3rem; }
+
+.search-form__button,
+.search-form__toggle {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 0;
+  display: block;
+  position: absolute;
+  background: none; }
+  .search-form__button svg,
+  .search-form__toggle svg {
+    margin: 5px 0px 0px; }
+    .search-form__button svg .search-icon,
+    .search-form__toggle svg .search-icon {
+      fill: #00b2d6;
+      fill: var(--bpk-primary-color, #00b2d6); }
+
+.search-form__toggle svg .cross-icon {
+  display: none; }
+
+.search-form__toggle svg .search-icon {
+  display: inline-block; }
+
+.search-form__button {
+  top: 1.25rem;
+  right: 0.375rem;
+  width: 1.875rem !important;
+  height: 1.875rem !important; }
+  .content .search-form__button {
+    top: 1.75rem; }
+
+.search-form__toggle {
+  z-index: 30; }
+  @media (min-width: 50.25rem) {
+    .search-form__toggle {
+      display: none !important; } }
+  @media (max-width: 50.25rem) {
+    .search-form__toggle {
+      right: 0;
+      top: 10px; } }
+
+/**
+ * Styles for individual articles displayed in archive listings.
+ */
+.listing-post {
+  -ms-flex: 1 1 100%;
+      flex: 1 1 100%;
+  max-width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin-bottom: 1.5rem;
+  /*
+	 * Full-width image & content.
+	 * Typically used in tag, author, and search archives.
+	 */
+  /*
+	 * Half-width image & half-width content.
+	 * Used at top of category archive.
+	 */
+  /*
+	 * Half-width content block with image stretching full width of block.
+	 * Used in category archive.
+	 */ }
+  @media (min-width: 50.25rem) {
+    .listing-post {
+      float: left;
+      width: 48%; } }
+  .listing-post--full {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-pack: start;
+        justify-content: flex-start;
+    -ms-flex: auto;
+        flex: auto;
+    margin: 0 auto 1.5rem;
+    padding-bottom: 0.75rem;
+    -webkit-box-shadow: 0 1px 0 #e6e4eb;
+            box-shadow: 0 1px 0 #e6e4eb; }
+    .listing-post--full .listing-post__header {
+      margin-bottom: 0.75rem; }
+    .listing-post--full .listing-post__thumbnail {
+      margin: 0;
+      width: 100%;
+      height: 11.25rem; }
+    @media (min-width: 50.25rem) {
+      .listing-post--full {
+        float: none;
+        width: 100%;
+        max-width: 600px; } }
+  .listing-post--large {
+    -ms-flex-direction: column;
+        flex-direction: column; }
+    .listing-post--large .listing-post__title {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+      margin: 0.375rem 0 1.125rem; }
+    .listing-post--large .listing-post__byline {
+      margin: 0.75rem 0;
+      display: block; }
+    .listing-post--large .listing-post__thumbnail {
+      width: auto;
+      height: 9.375rem;
+      margin: 1.125rem auto 0.75rem; }
+    .listing-post--large .listing-post__content {
+      display: block;
+      font-size: 1rem;
+      line-height: 1.5rem; }
+      .listing-post--large .listing-post__content p {
+        margin: 0; }
+    @media (min-width: 50.25rem) {
+      .listing-post--large {
+        min-width: 100%;
+        -ms-flex: 1 1 100%;
+            flex: 1 1 100%;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+        -ms-flex-direction: row;
+            flex-direction: row;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+        padding-bottom: 1.5rem;
+        margin-bottom: 2.25rem;
+        -webkit-box-shadow: 0 1px 0 #e6e4eb;
+                box-shadow: 0 1px 0 #e6e4eb; }
+        .listing-post--large .listing-post__thumbnail {
+          width: 48%;
+          -ms-flex-order: 1;
+              order: 1;
+          height: 9.375rem;
+          margin: 0 4% 0 0; }
+        .listing-post--large .listing-post__header {
+          -ms-flex-order: 2;
+              order: 2;
+          width: 48%; }
+        .listing-post--large .listing-post__content {
+          -ms-flex-order: 3;
+              order: 3;
+          width: 48%; } }
+  .listing-post--medium {
+    -ms-flex-direction: column;
+        flex-direction: column;
+    text-align: center;
+    padding: 1.5rem 0; }
+    @media (max-width: 50.25rem) {
+      .listing-post--medium {
+        -webkit-box-shadow: 0 1px 0 #e6e4eb, 0 -1px 0 #e6e4eb;
+                box-shadow: 0 1px 0 #e6e4eb, 0 -1px 0 #e6e4eb; } }
+    @media (min-width: 50.25rem) {
+      .listing-post--medium {
+        padding-top: 0;
+        margin-right: 4%;
+        -webkit-box-shadow: 0 1px 0 #e6e4eb;
+                box-shadow: 0 1px 0 #e6e4eb; } }
+    .listing-post--medium .listing-post__thumbnail {
+      -ms-flex-order: 1;
+          order: 1;
+      width: auto;
+      height: 9.375rem;
+      margin: 0 auto 1.5rem; }
+    .listing-post--medium .listing-post__header {
+      -ms-flex-order: 2;
+          order: 2; }
+    .listing-post--medium .listing-post__title {
+      font-size: 1.5rem;
+      font-weight: normal;
+      line-height: 1.875rem; }
+  @media (min-width: 50.25rem) {
+    .listing-post--large .listing-post__byline, .listing-post--medium .listing-post__byline {
+      font-size: 1rem;
+      line-height: 1.5rem; } }
+
+.listing-post__date,
+.listing-post__byline {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  color: #817b8f;
+  color: var(--bpk-color-gray-500, #817b8f);
+  margin-bottom: 0.375rem; }
+
+.listing-post__byline {
+  font-weight: bold; }
+  .listing-post__byline a {
+    color: inherit;
+    text-decoration: none;
+    -webkit-transition: color 150ms linear;
+    transition: color 150ms linear; }
+    .listing-post__byline a:hover, .listing-post__byline a:active {
+      color: #00b2d6;
+      color: var(--bpk-primary-color, #00b2d6); }
+
+.listing-post__title {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: bold;
+  color: #524c61;
+  color: var(--bpk-color-gray-700, #524c61);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 0.375rem; }
+
+.listing-post__title__link {
+  color: #524c61;
+  color: var(--bpk-color-gray-700, #524c61); }
+
+.listing-post__thumbnail {
+  width: 25%;
+  min-width: 8.625rem;
+  height: 4.875rem;
+  border-radius: 0.1875rem;
+  overflow: hidden;
+  margin-left: 1.5rem; }
+  .listing-post__thumbnail img {
+    max-width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    display: block;
+    margin: auto; }
+
+/**
+ * Styles for pagination links on archive pages.
+ */
+.pagination-links {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center; }
+  .pagination-links::before, .pagination-links::after {
+    content: '';
+    display: table; }
+  .pagination-links::after {
+    clear: both; }
+
+.pagination-list {
+  display: -ms-flexbox;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.pagination-list__item {
+  margin-right: 0.375rem; }
+  html[dir=rtl] .pagination-list__item {
+    margin-right: 0;
+    margin-left: 0.375rem; }
+    html[dir=rtl] .pagination-list__item:last-child {
+      margin-left: 0; }
+  .pagination-list__item:last-child {
+    margin-right: 0; }
+
+.page-numbers:not(.dots) {
+  display: inline-block;
+  margin: 0;
+  padding: 0.375rem 1.125rem;
+  border: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00d775), to(#00bd68));
+  background-image: linear-gradient(-180deg, #00d775 0%, #00bd68 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--bpk-button-primary-gradient-start-color, #00d775)), to(var(--bpk-button-primary-gradient-end-color, #00bd68)));
+  background-image: linear-gradient(-180deg, var(--bpk-button-primary-gradient-start-color, #00d775) 0%, var(--bpk-button-primary-gradient-end-color, #00bd68) 100%);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: white;
+  color: var(--bpk-button-primary-text-color, white);
+  background-color: #00d775;
+  background-color: var(--bpk-button-primary-background-color, #00d775);
+  border-radius: 1.125rem;
+  border-radius: var(--bpk-button-border-radius, 1.125rem);
+  background-image: none;
+  color: #00b2d6;
+  color: var(--bpk-button-secondary-text-color, #00b2d6);
+  background-color: white;
+  background-color: var(--bpk-button-secondary-background-color, white);
+  -webkit-box-shadow: 0 0 0 2px #e6e4eb inset;
+          box-shadow: 0 0 0 2px #e6e4eb inset;
+  -webkit-box-shadow: 0 0 0 2px var(--bpk-button-secondary-border-color, #e6e4eb) inset;
+          box-shadow: 0 0 0 2px var(--bpk-button-secondary-border-color, #e6e4eb) inset;
+  min-width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  line-height: 2.25rem; }
+  .bpk-no-touch-support .page-numbers:not(.dots):hover:not(:active):not(:disabled) {
+    background-image: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: white;
+    color: var(--bpk-button-primary-hover-text-color, white);
+    background-color: #00bd68;
+    background-color: var(--bpk-button-primary-hover-background-color, #00bd68); }
+  .bpk-no-touch-support .page-numbers:not(.dots):hover:not(:active):not(:disabled) {
+    background-image: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: white;
+    color: var(--bpk-button-primary-hover-text-color, white);
+    background-color: #00bd68;
+    background-color: var(--bpk-button-primary-hover-background-color, #00bd68); }
+  .page-numbers:not(.dots):active {
+    background-image: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: white;
+    color: var(--bpk-button-primary-active-text-color, white);
+    background-color: #00a85d;
+    background-color: var(--bpk-button-primary-active-background-color, #00a85d); }
+  .page-numbers:not(.dots):disabled {
+    background-color: #e6e4eb;
+    background-image: none;
+    color: #b2aebd;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    cursor: not-allowed; }
+  .bpk-no-touch-support .page-numbers:not(.dots):hover:not(:active):not(:disabled) {
+    background-image: none;
+    -webkit-box-shadow: 0 0 0 2px #00b2d6 inset;
+            box-shadow: 0 0 0 2px #00b2d6 inset;
+    color: #00b2d6;
+    color: var(--bpk-button-secondary-hover-text-color, #00b2d6);
+    background-color: white;
+    background-color: var(--bpk-button-secondary-hover-background-color, white);
+    box-shadow: 0 0 0 2px #00b2d6 inset;
+    -webkit-box-shadow: 0 0 0 2px var(--bpk-button-secondary-hover-border-color, #00b2d6) inset;
+            box-shadow: 0 0 0 2px var(--bpk-button-secondary-hover-border-color, #00b2d6) inset; }
+  .bpk-no-touch-support .page-numbers:not(.dots):hover:not(:active):not(:disabled) {
+    background-image: none;
+    -webkit-box-shadow: 0 0 0 2px #00b2d6 inset;
+            box-shadow: 0 0 0 2px #00b2d6 inset;
+    color: #00b2d6;
+    color: var(--bpk-button-secondary-hover-text-color, #00b2d6);
+    background-color: white;
+    background-color: var(--bpk-button-secondary-hover-background-color, white);
+    box-shadow: 0 0 0 2px #00b2d6 inset;
+    -webkit-box-shadow: 0 0 0 2px var(--bpk-button-secondary-hover-border-color, #00b2d6) inset;
+            box-shadow: 0 0 0 2px var(--bpk-button-secondary-hover-border-color, #00b2d6) inset; }
+  .page-numbers:not(.dots):active {
+    background-image: none;
+    -webkit-box-shadow: 0 0 0 3px #00b2d6 inset;
+            box-shadow: 0 0 0 3px #00b2d6 inset;
+    color: #00b2d6;
+    color: var(--bpk-button-secondary-active-text-color, #00b2d6);
+    background-color: white;
+    background-color: var(--bpk-button-secondary-active-background-color, white);
+    box-shadow: 0 0 0 3px #00b2d6 inset;
+    -webkit-box-shadow: 0 0 0 3px var(--bpk-button-secondary-active-border-color, #00b2d6) inset;
+            box-shadow: 0 0 0 3px var(--bpk-button-secondary-active-border-color, #00b2d6) inset; }
+  .page-numbers:not(.dots):disabled {
+    background-color: #e6e4eb;
+    background-image: none;
+    color: #b2aebd;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+  .page-numbers:not(.dots).current {
+    background-image: none;
+    color: white;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    cursor: auto;
+    background-color: #008ca8;
+    background-color: var(--bpk-pagination-selected-background-color, #008ca8);
+    -webkit-box-shadow: 0 0 0 2px #008ca8 inset;
+            box-shadow: 0 0 0 2px #008ca8 inset;
+    -webkit-box-shadow: 0 0 0 2px var(--bpk-pagination-selected-background-color, #008ca8) inset;
+            box-shadow: 0 0 0 2px var(--bpk-pagination-selected-background-color, #008ca8) inset; }
+    .bpk-no-touch-support .page-numbers:not(.dots).current:hover:not(:active):not(:disabled) {
+      background-image: none;
+      color: white;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      background-color: #008ca8;
+      background-color: var(--bpk-pagination-selected-background-color, #008ca8);
+      -webkit-box-shadow: 0 0 0 2px #008ca8 inset;
+              box-shadow: 0 0 0 2px #008ca8 inset;
+      -webkit-box-shadow: 0 0 0 2px var(--bpk-pagination-selected-background-color, #008ca8) inset;
+              box-shadow: 0 0 0 2px var(--bpk-pagination-selected-background-color, #008ca8) inset; }
+    .bpk-no-touch-support .page-numbers:not(.dots).current:hover:not(:active):not(:disabled) {
+      background-image: none;
+      color: white;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      background-color: #008ca8;
+      background-color: var(--bpk-pagination-selected-background-color, #008ca8);
+      -webkit-box-shadow: 0 0 0 2px #008ca8 inset;
+              box-shadow: 0 0 0 2px #008ca8 inset;
+      -webkit-box-shadow: 0 0 0 2px var(--bpk-pagination-selected-background-color, #008ca8) inset;
+              box-shadow: 0 0 0 2px var(--bpk-pagination-selected-background-color, #008ca8) inset; }
+    .page-numbers:not(.dots).current:active {
+      background-image: none;
+      color: white;
+      -webkit-box-shadow: none;
+              box-shadow: none;
+      background-color: #008ca8;
+      background-color: var(--bpk-pagination-selected-background-color, #008ca8);
+      -webkit-box-shadow: 0 0 0 2px #008ca8 inset;
+              box-shadow: 0 0 0 2px #008ca8 inset;
+      -webkit-box-shadow: 0 0 0 2px var(--bpk-pagination-selected-background-color, #008ca8) inset;
+              box-shadow: 0 0 0 2px var(--bpk-pagination-selected-background-color, #008ca8) inset; }
+    .page-numbers:not(.dots).current:disabled {
+      -webkit-box-shadow: none;
+              box-shadow: none; }
+
+.pagination-nudger {
+  text-align: center;
+  vertical-align: middle;
+  line-height: 1.125rem;
+  display: inline-block;
+  margin-top: 0.40625rem; }
+
+.pagination-nudger__button {
+  height: 2.25rem;
+  padding: 0 0.375rem;
+  border: none;
+  background: none;
+  line-height: 100%;
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  color: #00b2d6;
+  color: var(--bpk-pagination-nudger-color, #00b2d6); }
+  .bpk-no-touch-support .pagination-nudger__button:hover:not(:active):not(:disabled) {
+    color: #008ca8;
+    color: var(--bpk-pagination-nudger-hover-color, #008ca8); }
+  .bpk-no-touch-support .pagination-nudger__button:hover:not(:active):not(:disabled) {
+    color: #008ca8;
+    color: var(--bpk-pagination-nudger-hover-color, #008ca8); }
+  .pagination-nudger__button:active {
+    color: #009dbd;
+    color: var(--bpk-pagination-nudger-active-color, #009dbd); }
+  .pagination-nudger__button.disabled {
+    color: #e6e4eb;
+    color: var(--bpk-color-gray-100, #e6e4eb);
+    cursor: not-allowed; }
+
+.pagination-nudger__icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor; }
+  html[dir=rtl] .pagination-nudger__icon {
+    -webkit-transform: scaleX(-1);
+            transform: scaleX(-1); }
+
+.pagination-nudger__text--hidden {
+  position: absolute;
+  width: 1px;
+  /* stylelint-disable-line unit-blacklist */
+  height: 1px;
+  /* stylelint-disable-line unit-blacklist */
+  margin: -1px;
+  /* stylelint-disable-line unit-blacklist */
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0); }
+
+/**
+ *Open Component generic styles.
+ */
+.open-component-wrapper {
+  margin: 1.5rem auto; }
+
+/*
+ * Workaround for cookie banner to show it above share buttons.
+ */
+#cookie-banner-root .CookieBanner--sticky-bottom-1B3Ox {
+  z-index: 1000210; }
+
+/**
+ * Button styles.
+ */
+.button--primary-action,
+.button-primary-action {
+  display: inline-block;
+  margin: 0;
+  padding: 0.375rem 1.125rem;
+  border: 0;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#00d775), to(#00bd68));
+  background-image: linear-gradient(-180deg, #00d775 0%, #00bd68 100%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(var(--bpk-button-primary-gradient-start-color, #00d775)), to(var(--bpk-button-primary-gradient-end-color, #00bd68)));
+  background-image: linear-gradient(-180deg, var(--bpk-button-primary-gradient-start-color, #00d775) 0%, var(--bpk-button-primary-gradient-end-color, #00bd68) 100%);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  text-align: center;
+  text-decoration: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  cursor: pointer;
+  vertical-align: middle;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  color: white;
+  color: var(--bpk-button-primary-text-color, white);
+  background-color: #00d775;
+  background-color: var(--bpk-button-primary-background-color, #00d775);
+  border-radius: 1.125rem;
+  border-radius: var(--bpk-button-border-radius, 1.125rem);
+  margin: 0.75rem 0; }
+  .bpk-no-touch-support .button--primary-action:hover:not(:active):not(:disabled), .bpk-no-touch-support
+  .button-primary-action:hover:not(:active):not(:disabled) {
+    background-image: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: white;
+    color: var(--bpk-button-primary-hover-text-color, white);
+    background-color: #00bd68;
+    background-color: var(--bpk-button-primary-hover-background-color, #00bd68); }
+  .bpk-no-touch-support .button--primary-action:hover:not(:active):not(:disabled), .bpk-no-touch-support
+  .button-primary-action:hover:not(:active):not(:disabled) {
+    background-image: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: white;
+    color: var(--bpk-button-primary-hover-text-color, white);
+    background-color: #00bd68;
+    background-color: var(--bpk-button-primary-hover-background-color, #00bd68); }
+  .button--primary-action:active,
+  .button-primary-action:active {
+    background-image: none;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    color: white;
+    color: var(--bpk-button-primary-active-text-color, white);
+    background-color: #00a85d;
+    background-color: var(--bpk-button-primary-active-background-color, #00a85d); }
+  .button--primary-action:disabled,
+  .button-primary-action:disabled {
+    background-color: #e6e4eb;
+    background-image: none;
+    color: #b2aebd;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+    cursor: not-allowed; }
+  .button--primary-action:visited,
+  .button-primary-action:visited {
+    color: white; }
+  p > .button--primary-action, p >
+  .button-primary-action {
+    margin: 0; }
+
+.bpk-button--selected:visited {
+  color: white; }
+
+/**
+ * Flight Search Controls styles.
+ */
+.oc-flight-search-controls {
+  border-radius: 0.375rem;
+  padding: 0.75rem;
+  background-color: #008ca8;
+  background-color: #008ca8;
+  background-color: var(--bpk-flight-search-controls-month-selected-background-color, #008ca8); }
+
+/**
+ * Styles for count of search results on search page.
+ */
+.search-results-count {
+  text-align: center;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: bold;
+  color: #252033;
+  color: var(--bpk-color-gray-900, #252033); }
+
+/**
+ * These styles were copied from content.
+ *
+ * We are ripping these styles out of the content wherever we find them and
+ * will keep a copy here for when/if they are used in the CSS Cards Gutenberg block.
+ */
+.educontainer {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: stretch;
+      align-items: stretch;
+  -ms-flex-pack: center;
+      justify-content: center;
+  margin: 1.5rem auto; }
+  .educontainer .wp-block-image {
+    width: auto; }
+
+.edu-wrap {
+  background-color: white;
+  color: #524c61;
+  color: var(--bpk-color-gray-700, #524c61);
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(37, 32, 31, 0.3);
+          box-shadow: 0px 1px 3px 0px rgba(37, 32, 31, 0.3);
+  border-radius: 0.375rem;
+  padding: 10px;
+  border-collapse: separate;
+  margin: 6px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center; }
+
+.edu-wrap:hover {
+  color: white;
+  -webkit-box-shadow: 0 4px 14px 0 rgba(37, 32, 31, 0.25);
+          box-shadow: 0 4px 14px 0 rgba(37, 32, 31, 0.25); }
+
+.edu-icon {
+  width: 120px;
+  margin: auto; }
+
+.edu-img {
+  margin: 0 !important;
+  width: 110px; }
+
+.chevicon {
+  display: inline-block;
+  content: '';
+  display: inline-block;
+  width: 1.125rem;
+  height: 1.125rem;
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjE4IiBoZWlnaHQ9IjE4Ij48c3R5bGUgdHlwZT0idGV4dC9jc3MiPmNpcmNsZSwgZWxsaXBzZSwgbGluZSwgcGF0aCwgcG9seWdvbiwgcG9seWxpbmUsIHJlY3QsIHRleHQgeyBmaWxsOiAjYjJhZWJkICFpbXBvcnRhbnQgfTwvc3R5bGU+PHBhdGggZD0iTTE2LjUgMTJsLTYuNCA3LjJjLS42LjYtMS41LjctMi4xLjEtLjYtLjUtLjctMS41LS4xLTIuMWw0LjYtNS4yLTQuNi01LjJjLS42LS42LS41LTEuNi4xLTIuMXMxLjYtLjUgMi4xLjFsNi40IDcuMnoiLz48L3N2Zz4=") no-repeat;
+  background-size: cover;
+  white-space: nowrap;
+  padding-right: 16px; }
+
+.edu-header {
+  color: #524c61;
+  color: var(--bpk-color-gray-700, #524c61);
+  font-size: 16px;
+  vertical-align: top;
+  text-align: center;
+  line-height: 1.2em;
+  margin-bottom: 6px; }
+
+.edu-body {
+  color: #b2aebd;
+  color: var(--bpk-color-gray-300, #b2aebd);
+  font-size: 12px;
+  vertical-align: top;
+  line-height: 1.5em;
+  text-align: center; }
+
+/* Large */
+.educontainer {
+  display: -ms-flexbox;
+  display: flex; }
+
+.educontainer > div {
+  -ms-flex: 1 1 0%;
+      flex: 1 1 0%;
+  /*grow*/ }
+
+/* Medium screens */
+@media all and (max-width: 800px) {
+  .educontainer {
+    -ms-flex-pack: distribute;
+        justify-content: space-around; } }
+
+/* Small screens */
+@media all and (max-width: 500px) {
+  .educontainer {
+    -ms-flex-direction: column;
+        flex-direction: column; } }
+
+/**
+ * Styling for sidebar widgets on single posts.
+ */
+.sidebar-widget {
+  margin-bottom: 1.5rem; }
+  .sidebar-widget.widget_skyscanner_twitter_widget .twitter-follow-button {
+    visibility: hidden; }
+  .sidebar-widget.widget_skyscanner_facebook_widget .fb-xfbml-parse-ignore {
+    margin: 0px;
+    padding: 0;
+    -webkit-box-shadow: none;
+            box-shadow: none; }
+
+.strevda-slot {
+  min-width: 100%; }
+
+/**
+ * Styles for JetPack related posts that display on single posts.
+ */
+.jp-relatedposts {
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #f3f2f5;
+  border-top-color: var(--bpk-color-gray-50, #f3f2f5);
+  margin: 1.875rem 0; }
+
+.jp-relatedposts-headline {
+  font-weight: 700;
+  font-style: normal;
+  color: #817b8f;
+  color: var(--bpk-color-gray-500, #817b8f);
+  font-size: 1.5rem;
+  margin: 1.875rem 0; }
+
+@media (min-width: 50.25rem) {
+  .jp-relatedposts-items {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+        justify-content: space-between; } }
+
+.jp-relatedposts-post {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between; }
+  .jp-relatedposts-post > .jp-relatedposts-post-a {
+    -ms-flex-order: 2;
+        order: 2;
+    -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+    margin-left: 1.5rem; }
+  @media (min-width: 50.25rem) {
+    .jp-relatedposts-post {
+      display: block;
+      -ms-flex-preferred-size: calc( 33% - 1.5rem);
+          flex-basis: calc( 33% - 1.5rem); }
+      .jp-relatedposts-post > .jp-relatedposts-post-a {
+        margin-left: 0; } }
+  .jp-relatedposts-post .jp-relatedposts-post-context {
+    margin-top: 0.375rem;
+    margin-bottom: 0.375rem; }
+
+.jp-relatedposts-post-img {
+  border-radius: 0.1875rem;
+  margin-bottom: 0.75rem; }
+
+.jp-relatedposts-post-title {
+  -ms-flex-order: 0;
+      order: 0;
+  -ms-flex: 0 0 65%;
+      flex: 0 0 65%;
+  margin: 0;
+  line-height: 1.5rem; }
+  .jp-relatedposts-post-title a {
+    color: #252033;
+    color: var(--bpk-color-gray-900, #252033); }
+
+.jp-relatedposts-post-excerpt {
+  display: none; }
+
+.jp-relatedposts-post-title + span,
+.jp-relatedposts-post-context {
+  font-size: 0.75rem;
+  line-height: 1.125rem;
+  color: #817b8f;
+  color: var(--bpk-color-gray-500, #817b8f);
+  margin-bottom: 0.375rem; }
+
+.jp-relatedposts-post-context {
+  font-weight: 700; }
+
+h4.jp-relatedposts-post-title {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: inherit;
+  line-height: 1.5rem; }
+
+@media (max-width: 50.25rem) {
+  .jp-relatedposts-post-context,
+  .jp-relatedposts-post-title + span {
+    display: none; } }
+
+/**
+ * Flight Search Controls styles.
+ */
+.hotels-search-wrapper .skyscanner-widget {
+  border-radius: 0.375rem;
+  padding: 0.75rem; }
+
+/**
+ * Styles for Ratings block.
+ */
+.ratings-content {
+  font-weight: bold;
+  margin: 0; }
+
+.ratings-items {
+  margin: 1.5rem 0;
+  padding: 0; }
+
+.ratings-items__rating {
+  margin: 1.5rem 0;
+  list-style-type: none;
+  position: relative; }
+
+p.ratings-items__rating__author {
+  margin-bottom: 0.75rem; }
+
+.ratings-items__rating__stars {
+  display: inline;
+  margin-right: 15px;
+  position: relative; }
+  .ratings-items__rating__stars:before {
+    content: "";
+    color: orange;
+    position: absolute;
+    pointer-events: none;
+    top: -2px; }
+  .ratings-items__rating__stars.stars--1:before {
+    content: "\2605"; }
+  .ratings-items__rating__stars.stars--2:before {
+    content: "\2605\2605"; }
+  .ratings-items__rating__stars.stars--3:before {
+    content: "\2605\2605\2605"; }
+  .ratings-items__rating__stars.stars--4:before {
+    content: "\2605\2605\2605\2605"; }
+  .ratings-items__rating__stars.stars--5:before {
+    content: "\2605\2605\2605\2605\2605"; }
+
+.ratings-items__rating__content {
+  margin-top: 0;
+  margin-bottom: 1.5rem; }
+
+/**
+ * Edit Screen Controls
+ */
+.ratings-items__add-new .dashicons,
+.ratings-items__rating__remove .dashicons {
+  margin-right: 7px; }
+
+.star-rating-button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0 3px;
+  color: orange;
+  border: none; }
+  .star-rating-button[aria-pressed="true"] ~ button {
+    color: #524c61;
+    color: var(--bpk-color-gray-700, #524c61); }
+
+.star-rating-edit:hover button,
+.star-rating-edit:focus-within button {
+  color: orange; }
+
+.star-rating-edit .star-rating-button:hover ~ button,
+.star-rating-edit .star-rating-button:focus ~ button,
+.star-rating-edit .star-rating-button:active ~ button {
+  color: #524c61;
+  color: var(--bpk-color-gray-700, #524c61); }
+
+.star-rating-edit:before {
+  display: none; }
+
+.gutenberg .ratings-items__rating__content {
+  font-weight: bold;
+  margin: 1.5rem 0; }
+
+.ratings-items__rating__controls {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  -ms-flex-align: center;
+      align-items: center;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(145, 151, 162, 0.25); }
+  .ratings-items__rating__controls .components-base-control,
+  .ratings-items__rating__controls .components-button {
+    margin-bottom: 8px; }
+  .ratings-items__rating__controls .components-toggle-control {
+    padding-top: 6px; }
+  .ratings-items__rating__controls .components-form-toggle {
+    margin-left: 8px;
+    line-height: 1; }
+
+.promise-block-wrapper {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  padding: 1.125rem;
+  border-radius: 0.375rem;
+  -webkit-box-shadow: inset 0 0 0 1px #e6e4eb;
+          box-shadow: inset 0 0 0 1px #e6e4eb;
+  text-align: center;
+  background-color: #f3f2f5;
+  background-color: var(--bpk-color-gray-50, #f3f2f5); }
+  .promise-block-wrapper.promises-count-1 .promise-image {
+    width: 100%; }
+  .promise-block-wrapper.promises-count-2 .promise-image {
+    width: 50%; }
+  .promise-block-wrapper.promises-count-3 .promise-image {
+    width: 33.333%; }
+  .promise-block-wrapper .promises {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-spacing: 10px;
+    max-width: 71.25rem;
+    margin: auto; }
+    .promise-block-wrapper .promises .promise-image {
+      display: table-cell; }
+    .promise-block-wrapper .promises .summary-image {
+      display: table-cell;
+      vertical-align: middle;
+      padding-right: 1.125rem;
+      width: 10px; }
+    .promise-block-wrapper .promises h4 {
+      color: #524c61;
+      color: var(--bpk-color-gray-700, #524c61);
+      line-height: 1.5rem; }
+    .promise-block-wrapper .promises p {
+      color: #817b8f;
+      color: var(--bpk-color-gray-500, #817b8f);
+      font-size: 1rem;
+      line-height: 1.5rem; }
+    .promise-block-wrapper .promises li p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: #817b8f;
+      color: var(--bpk-color-gray-500, #817b8f); }
+    .promise-block-wrapper .promises .presentation-block {
+      padding: 1.125rem;
+      position: relative;
+      display: table;
+      background-color: #f3f2f5;
+      background-color: var(--bpk-color-gray-50, #f3f2f5);
+      color: #524c61;
+      color: var(--bpk-color-gray-700, #524c61);
+      text-decoration: none;
+      cursor: pointer;
+      border-radius: 0.375rem;
+      width: 100%; }
+    .promise-block-wrapper .promises blockquote {
+      display: table-cell;
+      vertical-align: middle; }
+    .promise-block-wrapper .promises .quote-text {
+      margin: 0 0 0.75rem;
+      padding: 0.75rem 1.5rem;
+      height: 120; }
+    .promise-block-wrapper .promises .quote-text-no-line {
+      margin: 0 0 0.75rem;
+      padding: 0.75rem 0.75rem 0.75rem 1.125rem;
+      color: #817b8f;
+      color: var(--bpk-color-gray-500, #817b8f); }
+    @media (max-width: 880px) {
+      .promise-block-wrapper .promises .promise-image {
+        margin: 0 auto;
+        display: block;
+        width: 100%; } }
+    .promise-block-wrapper .promises .toggle-content li p {
+      font-size: 1rem;
+      line-height: 1.5rem; }
+    .promise-block-wrapper .promises .toggle-content {
+      border-left-width: 2px;
+      border-left-style: solid;
+      border-left-color: #00b2d6;
+      border-left-color: var(--bpk-primary-color, #00b2d6);
+      margin-left: 20px;
+      padding-left: 20px; }
+    @media (max-width: 880px) {
+      .promise-block-wrapper .promises .summary-image {
+        display: none; } }
+  .promise-block-wrapper .img-circle {
+    border-radius: 50%;
+    background-color: white;
+    padding: 0.75rem;
+    width: 240px;
+    max-width: 240px;
+    height: 240px; }
+
+.wp-block-skyscanner-promise .promise-block-wrapper .promise-image {
+  width: 100%;
+  display: block; }
+
+.wp-block-skyscanner-promise .img-circle {
+  border-radius: 50%;
+  background-color: white;
+  padding: 0.75rem;
+  width: 240px;
+  height: 240px; }
+
+.presentation-block-wrapper {
+  margin-bottom: 1.875rem; }
+  .presentation-block-wrapper .presentation-block {
+    padding: 1.125rem;
+    position: relative;
+    display: table;
+    background-color: #f3f2f5;
+    background-color: var(--bpk-color-gray-50, #f3f2f5);
+    color: #524c61;
+    color: var(--bpk-color-gray-700, #524c61);
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 0.375rem;
+    width: 100%; }
+    .presentation-block-wrapper .presentation-block .summary-image {
+      display: table-cell;
+      vertical-align: middle;
+      padding-right: 1.125rem;
+      width: 10px; }
+      .presentation-block-wrapper .presentation-block .summary-image .img-circle {
+        height: 120px;
+        width: 120px;
+        border-radius: 50%;
+        background-color: white;
+        padding: 0.75rem;
+        max-width: none; }
+      .presentation-block-wrapper .presentation-block .summary-image .components-button {
+        margin-top: 10px;
+        margin-left: 10px; }
+    .presentation-block-wrapper .presentation-block .quote-text {
+      margin: 0 0 0.75rem;
+      padding: 0.75rem 0.375rem 0.75rem 1.5rem;
+      min-height: 120px; }
+    @media (max-width: 880px) {
+      .presentation-block-wrapper .presentation-block.presentation-block-fe .summary-image {
+        display: none; }
+      .presentation-block-wrapper .presentation-block.presentation-block-fe .quote-text {
+        margin: 0px;
+        padding-left: 0;
+        -webkit-box-shadow: none;
+                box-shadow: none;
+        min-height: auto; }
+        .presentation-block-wrapper .presentation-block.presentation-block-fe .quote-text p {
+          margin-bottom: 0px; } }
+  .presentation-block-wrapper .learn_more_button {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    text-decoration: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    color: #00b2d6;
+    color: var(--bpk-link-color, #00b2d6);
+    text-align: left; }
+    .bpk-no-touch-support .presentation-block-wrapper .learn_more_button:hover:not(:active):not(:disabled) {
+      text-decoration: underline;
+      color: #524c61;
+      color: var(--bpk-link-hover-color, #524c61); }
+    .bpk-no-touch-support .presentation-block-wrapper .learn_more_button:hover:not(:active):not(:disabled) {
+      text-decoration: underline;
+      color: #524c61;
+      color: var(--bpk-link-hover-color, #524c61); }
+    .presentation-block-wrapper .learn_more_button:visited {
+      color: #008ca8;
+      color: var(--bpk-link-visited-color, #008ca8); }
+    .presentation-block-wrapper .learn_more_button:active {
+      text-decoration: underline;
+      color: #252033;
+      color: var(--bpk-link-active-color, #252033); }
+    .presentation-block-wrapper .learn_more_button svg {
+      fill: #00b2d6;
+      fill: var(--bpk-primary-color, #00b2d6);
+      height: 1.125rem;
+      width: 1.125rem;
+      margin-bottom: -3px; }
+    .presentation-block-wrapper .learn_more_button .down-icon {
+      display: inline-block; }
+    .presentation-block-wrapper .learn_more_button .up-icon {
+      display: none; }
+    .presentation-block-wrapper .learn_more_button.learn_more_button_open .down-icon {
+      display: none; }
+    .presentation-block-wrapper .learn_more_button.learn_more_button_open .up-icon {
+      display: inline-block; }
+  .presentation-block-wrapper .toggle-content {
+    border-left-width: 2px;
+    border-left-style: solid;
+    border-left-color: #00b2d6;
+    border-left-color: var(--bpk-primary-color, #00b2d6);
+    margin-left: 20px;
+    padding-left: 20px;
+    display: none; }
+    .presentation-block-wrapper .toggle-content.toggle-content-open {
+      display: block; }
+    .presentation-block-wrapper .toggle-content p {
+      color: #817b8f;
+      color: var(--bpk-color-gray-500, #817b8f);
+      font-size: 1rem;
+      line-height: 1.5rem;
+      margin: 1.125rem 0; }
+    .presentation-block-wrapper .toggle-content li p {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      color: #817b8f;
+      color: var(--bpk-color-gray-500, #817b8f); }
+
+.masthead__wrapper {
+  max-width: 1440px;
+  margin: 0 auto; }
+
+.masthead__content {
+  max-width: 1048px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; }
+
+.masthead__menu {
+  position: absolute;
+  right: 0;
+  top: 0; }

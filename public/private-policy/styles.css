@@ -1,0 +1,30 @@
+.embed-container .embed-overlay {
+  display: none; }
+
+.embed-container .embed-content {
+  display: block; }
+
+.embed-container.embed-blocked.embed-default .embed-overlay {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #ddd;
+  display: table;
+  width: 100%;
+  padding: 20px 35px; }
+  .embed-container.embed-blocked.embed-default .embed-overlay > .embed-overlay-inside {
+    color: #ddd;
+    display: table-cell;
+    text-align: center;
+    -webkit-transition: color .25s ease-in-out;
+    transition: color .25s ease-in-out;
+    vertical-align: middle; }
+    .embed-container.embed-blocked.embed-default .embed-overlay > .embed-overlay-inside p:last-of-type {
+      margin-bottom: 0px; }
+
+.embed-container.embed-blocked .embed-content {
+  display: none; }
+
+.embed-container.embed-hidden {
+  line-height: 0px; }
+  .embed-container.embed-hidden .embed-content {
+    line-height: 0px;
+    display: inline-block; }
