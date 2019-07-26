@@ -17,11 +17,11 @@ fit with stateless applications like Lambda function. Lambda function can intera
 ### Chatbot
 #### Run in local
 `npm run dev` to run simulated AWS Lambda server. This may not perfectly fit with real environment, but it helps you to debug Chatbot
-with VSCode.
+with VSCode. This may need a *.env* file for environment variables, checkout needed environment variables in *src/config.js*.
 
+Test Webhook GET, POST method: *http://localhost:8080/confession-chatbot/webhook*.
 #### Test Chatbot in console mode
 `npm run chatbot-console` to test in console mode, `npm run debug-chatbot` to debug chatbot in console mode.
-
 #### Deploy as AWS Lambda function
 Archive all items in root directory then upload to AWS Lambda. Handler: *app.handler*.
 
