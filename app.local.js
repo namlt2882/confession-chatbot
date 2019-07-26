@@ -19,7 +19,10 @@ function lambdaProxyWrapper(handler) {
 
         return handler(event, null, (err, response) => {
             res.writeHead(response.statusCode, response.headers)
-            res.write(JSON.stringify(response.body))
+            if (typeof response.body != 'string')
+                res.write(JSON.stringify(response.body))
+            else
+                res.write(Buffer.from(response.body))
             res.end()
         })
     }

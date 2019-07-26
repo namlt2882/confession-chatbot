@@ -7,6 +7,7 @@ function devLog(message) {
 
 function parseParams(query) {
     var params = {};
+    if(!query) return params
     query.split('&').forEach((keyval) => {
         keyval = keyval.split('=');
         params[keyval[0]] = keyval[1]
