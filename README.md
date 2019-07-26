@@ -4,6 +4,8 @@ There are many of confession pages in Facebook now, this chatbot helps automate 
 chat directly with page rather than sending their confession in another website. Chatbot also supports 2 languages: Vietnamese
 and English.
 
+<img src="https://github.com/namlt2882/confession-chatbot-for-fb/blob/master/media/demo.gif" width="300">
+
 ## Technology
 ### Chatbot
 Chatbot is written in **NodeJS** and deploy to **AWS** as **Lambda** function. This will helps minimize the monthly cost thanks on
