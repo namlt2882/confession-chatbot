@@ -8,7 +8,7 @@ and English.
 
 ## Technology
 ### Chatbot
-Chatbot is written in **NodeJS** and deploy to **AWS** as **Lambda** function. This will helps minimize the monthly cost thanks on
+Chatbot is written in **NodeJS** and deployed to **AWS** as **Lambda** function. This will helps minimize the monthly cost thanks on
 the benefits of AWS Lambda.
 
 ### Database
