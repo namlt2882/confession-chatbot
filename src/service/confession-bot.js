@@ -1,6 +1,7 @@
 let { botMessage, chatStatus } = require('../config/bot-message'),
     { CHATBOT_CONSOLE } = require('../config'),
     ChatStatusTable = require('../table/chat-status-table'),
+    StagingConfessionTable = require('../table/staging-confession-cb'),
     { devLog } = require('../utility/utility'),
     { EventEmitter } = require('events')
 
@@ -18,10 +19,10 @@ class ConfessionBot extends EventEmitter {
         this.updatedDate = this.insertedDate
         var data = await new Promise(function (resolve, reject) {
             ChatStatusTable.get(userId, function (data) {
-                resolve(JSON.parse(data));
-            });
-        });
-        if (data.length == 0) {
+                resolve(data)
+            })
+        })
+        if (!data) {
             // create new chat status
             var chatStatusObj = {
                 id: userId,
@@ -31,23 +32,19 @@ class ConfessionBot extends EventEmitter {
                 insertedDate: this.insertedDate,
                 updatedDate: this.updatedDate
             };
-            await new Promise(function(resolve,reject){
+            await new Promise(function(resolve, reject){
                 ChatStatusTable.insert(chatStatusObj, function (newObj) {
                     console.log(`--! Add user ${userId} to database: ${JSON.stringify(chatStatusObj)}`)
                     resolve(newObj)
-                }, function (err) {
-                    reject(err)
-                    throw err; 
                 })
             }) 
         }
         else {
-            let item = data[0];
-            this.language = item.language;
-            this.chatStatus = item.status;
-            this.confessionContent = Buffer.from(item.confessionContent, 'base64').toString();
-            this.insertedDate = Date.parse(item.insertedDate)
-            this.updatedDate = Date.parse(item.updatedDate)
+            this.language = data.language
+            this.chatStatus = data.status
+            this.confessionContent = data.confessionContent
+            this.insertedDate = data.insertedDate
+            this.updatedDate = data.updatedDate
         }
         this.getMessageData();
         this.emit('ready')
@@ -58,11 +55,23 @@ class ConfessionBot extends EventEmitter {
             id: this.userId,
             language: this.language,
             status: this.chatStatus,
-            confessionContent: Buffer.from(this.confessionContent).toString('base64'),
+            confessionContent: this.confessionContent,
             updatedDate: this.updatedDate
         }, (function (data) {
             devLog(data)
         }));
+    }
+
+    insertConfession(content) {
+        var obj = {
+            content: Buffer.from(content).toString('base64'),
+            status: StagingConfessionTable.STATUS.NEW,
+            updatedDate: new Date(),
+            insertedDate: new Date()
+        }
+        StagingConfessionTable.insert(obj, function(data) {
+            console.log("New Staging confession object: " + data)
+        })
     }
     /**
      * Set chat status
@@ -136,8 +145,8 @@ class ConfessionBot extends EventEmitter {
                 this.talk('POST-CONFESSION-SUCESS');
             });
             if (isEnd) {
-                this.confessionContent = ""
-                // finish post confession here
+                this.insertConfession(this.confessionContent)
+                this.confessionContent = ""    
                 this.talk('COMMAND');
             } else {
                 this.confessionContent += '\n' + message
