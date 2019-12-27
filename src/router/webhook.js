@@ -98,7 +98,7 @@ function sendTextMessage(recipientId, messageText, fastResponses = []) {
 }
 function callSendAPI(messageData) {
     var body = JSON.stringify(messageData);
-    var path = '/v2.6/me/messages?access_token=' + PAGE_ACCESS_TOKEN;
+    var path = '/v4.0/me/messages?access_token=' + PAGE_ACCESS_TOKEN;
     var options = {
         host: "graph.facebook.com",
         path: path,
