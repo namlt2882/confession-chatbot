@@ -6,6 +6,15 @@ http.createServer(lambdaProxyWrapper(app.handler)).listen(8080); //the server ob
 
 function lambdaProxyWrapper(handler) {
     return (req, res) => {
+        var callback = (err, response) => {
+            res.writeHead(response.statusCode, response.headers)
+            if (typeof response.body != 'string')
+                res.write(JSON.stringify(response.body))
+            else
+                res.write(Buffer.from(response.body))
+            res.end()
+        }
+        
         // Here we convert the request into a Lambda event
         const event = {
             httpMethod: req.method,
@@ -13,17 +22,20 @@ function lambdaProxyWrapper(handler) {
             path: req.url,
             pathParameters: {
                 proxy: req.params ? req.params[0] : undefined,
-            },
-            body: req.body ? JSON.parse(req.body) : undefined,
+            }
         }
 
-        return handler(event, null, (err, response) => {
-            res.writeHead(response.statusCode, response.headers)
-            if (typeof response.body != 'string')
-                res.write(JSON.stringify(response.body))
-            else
-                res.write(Buffer.from(response.body))
-            res.end()
-        })
+        if (req.url == 'GET') {
+            handler(event, null, callback)
+        } else {
+            var body = ''
+            req.on('data', function(chunk) {
+                body += chunk
+            })
+            req.on('end', function() {
+                event.body = body
+                handler(event, null, callback)
+            })
+        }
     }
 }
