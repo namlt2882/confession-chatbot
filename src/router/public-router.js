@@ -10,10 +10,10 @@ function POST(event, context, callback) {
 
 function retrieveFile(event, context, callback) {
     var fileLocation = event.path;
-    if (fileLocation.match(/^\/confession-chatbot$/)) {
-        fileLocation = fileLocation.replace('/confession-chatbot', '')
+    if (fileLocation.match(/^\/confession-chatbot\/public$/)) {
+        fileLocation = fileLocation.replace('/confession-chatbot/public', '')
     } else {
-        fileLocation = fileLocation.replace('/confession-chatbot/', '')
+        fileLocation = fileLocation.replace('/confession-chatbot/public/', '')
     }
     if (fileLocation == '') {
         fileLocation = 'index.html'
@@ -31,18 +31,21 @@ function retrieveFile(event, context, callback) {
             response = {
                 'body': data.toString('utf8'),
                 'statusCode': 200,
-                'headers': {'Content-Type':getMimes(fileLocation)}
+                'headers': {'Content-Type': getMimes(fileLocation)}
             }
         }
         callback(null, response)
     })
 }
-function getMimes(file){
+function getMimes(file) {
     if(file.endsWith('.html')){
         return 'text/html'
     }
     if(file.endsWith('.css')){
         return 'text/css'
+    }
+    if(file.endsWith('.js')){
+        return 'text/javascript'
     }
 }
 module.exports = { GET, POST }
